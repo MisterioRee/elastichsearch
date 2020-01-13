@@ -9,13 +9,15 @@
 	<p class="block_2">Also, each node can have many shards, shards will allow node to divide data into multiple classifications which will improve search terminology.</p>
 	<p class="block_2">Note: the replica is managed by Elastic itself.</p>
 	<p class="block_1">&nbsp;</p>
-	<img src="https://github.com/MisterioRee/elastichsearch/tree/master/images/000000.png" alt="Image" class="calibre1" />
+	[ ](https://github.com/MisterioRee/elastichsearch/tree/master/images/000000.png) 
 	<p class="block_1">&nbsp;</p>
 	<p class="block_2">Below given example have 2 index, 2 nodes and 2 shards, each shard has replica on the other node so that in case of node failure the data isn’t lost </p>
 	<p class="block_1">&nbsp;</p>
 	<p class="block_1">&nbsp;</p>
 	<p class="block_1">&nbsp;</p>
-	<h2 class="block_3" id="calibre_link-2"><img src="https://github.com/MisterioRee/elastichsearch/tree/master/images/000001.png" alt="Image" class="calibre1" /></h2>
+	<h2 class="block_3" id="calibre_link-2">
+[  ](https://github.com/MisterioRee/elastichsearch/tree/master/images/000001.png) 		
+		</h2>
 	<p class="block_4">As we can see shards in node one denoted by 1. * and 2. * in node 2, have replicas in corresponding node, shards existing in node 2 have replicas in node 1 and shards in node 2 have replicas in node 2.</p>
 	<h2 class="block_3" id="calibre_link-3">Nodes Roles:</h2>
 	<p class="block_2">There are 3 type of role a node can perform</p>
