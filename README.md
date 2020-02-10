@@ -47,8 +47,15 @@ Snapshots used as term backups, we can take a snapshot of a node and cluster at 
 
 # Queries
 
-### DELETE [index name]
+- PUT [index name]
+-   -   PUT index_name
+            {
+            "settings": {
+                "number_of_replicas": 3,
+                "number_of_shards": 9
+            }
+            }
 
-### DELETE [index name]
+- DELETE [index name]
 
 
