@@ -43,3 +43,12 @@ It will involve in voting process but itself it can’t be master, only useful f
 
 ## Snapshots
 Snapshots used as term backups, we can take a snapshot of a node and cluster at given time, it will save all the data of a node including state(s).
+
+
+# Queries
+
+### DELETE [index name]
+
+### DELETE [index name]
+
+
