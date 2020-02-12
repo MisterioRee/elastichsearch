@@ -248,9 +248,9 @@ Query DSL Look alike JSON request via console or another request method
 
 It supports direct query via query parameters
 
-`` GET index\_name/\_search?q=name:john ``
+`` GET index\_name/_search?q=name:john ``
 
-`` GET index\_name/\_search?q=name:john OR age:25 ``
+`` GET index\_name/_search?q=name:john OR age:25 ``
 
 ### Query DSL
 
