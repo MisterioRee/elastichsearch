@@ -213,33 +213,26 @@ Consist of tokenizer and filter perform various functionalities divided into man
 
 It takes the text and divide using white spaces, e.g:
 
-POST\_analyze
-
+`` POST _analyze
 {
+  "tokenizer": "standard",
+  "text": "The 2 QUICK Brown-Foxes jumped over the lazy dog's bone."
+}``
+`` [ The, 2, QUICK, Brown, Foxes, jumped, over, the, lazy, dog's, bone ] ``
 
-  &quot;tokenizer&quot;: &quot;standard&quot;,
-
-  &quot;text&quot;: &quot;The 2 QUICK Brown-Foxes jumped over the lazy dog&#39;s bone.&quot;
-
-}
-
-[The,2, QUICK,Brown,Foxes, jumped, over, the, lazy, dog&#39;s, bone]
 
 ### Lower case filter
 
-GET\_analyze
-
+`` 
+GET _analyze
 {
+  "tokenizer”: "standard",
+  "filter”: ["lowercase"],
+  "text”: "THE Quick FoX JUMPs"
+} ``
 
-  &quot;tokenizer&quot;:&quot;standard&quot;,
 
-  &quot;filter&quot;:[&quot;lowercase&quot;],
-
-  &quot;text&quot;:&quot;THE Quick FoX JUMPs&quot;
-
-}
-
-[the, quick, fox, jumps]
+`` [the, quick, fox, jumps] ``
 
 
 
@@ -255,26 +248,19 @@ Query DSL Look alike JSON request via console or another request method
 
 It supports direct query via query parameters
 
-GET index\_name/\_search?q=name:john
+`` GET index\_name/\_search?q=name:john ``
 
-GET index\_name/\_search?q=name:john OR age:25
+`` GET index\_name/\_search?q=name:john OR age:25 ``
 
 ### Query DSL
 
 Query DSL consist of leaf query and compound query, leaf query is **category = &#39;Fruit&#39;** while compound query is combination of leaf query
 
-GET index\_name/\_search
-
+`` GET index_name/_search
 {
-
-  &quot;query&quot;: {
-
-    &quot;match&quot;: {
-
-      &quot;Key\_name&quot;: &quot;value to match&quot;
-
+  "query": {
+    "match": { 
+      "Key_name": "value to match" 
     }
-
-  }
-
-}
+  } 
+} ``
