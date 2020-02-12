@@ -164,20 +164,118 @@ Used for range between numeric values
 
 #### Complex data types
 
+Complex primitives
+
+###### Object Data Type
+
+Added as JSON objects; stored as key-value pairs internally. May contains nested objects.
+
+###### Array Data Type
+
+Not an actual data type, because each field may contain multiple values by default.
+
+###### Array of object
+
+Array inside object.
+
+###### Nested Data Type
+
+Require nested quires
+
+#### Geo Data Types
+
+Accept latitude and longitude in 4 different formats, we can also calculate distance etc.
+
+###### Geo-shape Data Type
+
+Displays geographical shape of a stored object.
+
+###### Specialized Data Types
+
+Data type with very specific purpose such as Ip addresses.
+
+###### IP data type
+
+Used of IPV4 or IPV6
+
+###### Completion Data Type
+
+Used to provide auto completion and search suggestions functionality. It is optimized for quick lookups.
+
+###### Attachment Data Type
+
+Its is used to make text searchable, convert PDF, PPT etc searchable.
+
+## Analyzer
+
+Consist of tokenizer and filter perform various functionalities divided into many classifications.
+
+### Standard Tokenizer Analyzer
+
+It takes the text and divide using white spaces, e.g:
+
+POST\_analyze
+
+{
+
+  &quot;tokenizer&quot;: &quot;standard&quot;,
+
+  &quot;text&quot;: &quot;The 2 QUICK Brown-Foxes jumped over the lazy dog&#39;s bone.&quot;
+
+}
+
+[The,2, QUICK,Brown,Foxes, jumped, over, the, lazy, dog&#39;s, bone]
+
+### Lower case filter
+
+GET\_analyze
+
+{
+
+  &quot;tokenizer&quot;:&quot;standard&quot;,
+
+  &quot;filter&quot;:[&quot;lowercase&quot;],
+
+  &quot;text&quot;:&quot;THE Quick FoX JUMPs&quot;
+
+}
+
+[the, quick, fox, jumps]
 
 
 
-# Queries
-- GET /_cluster/health
-- PUT [index name]
--   -   PUT index_name
-            {
-            "settings": {
-                "number_of_replicas": 3,
-                "number_of_shards": 9
-            }
-            }
+## Search Methods
 
-- DELETE [index name]
+There are two methods to search from elasticsearch
 
+- Query DSL
 
+Query DSL Look alike JSON request via console or another request method
+
+- Request URL (Query String Query)
+
+It supports direct query via query parameters
+
+GET index\_name/\_search?q=name:john
+
+GET index\_name/\_search?q=name:john OR age:25
+
+### Query DSL
+
+Query DSL consist of leaf query and compound query, leaf query is **category = &#39;Fruit&#39;** while compound query is combination of leaf query
+
+GET index\_name/\_search
+
+{
+
+  &quot;query&quot;: {
+
+    &quot;match&quot;: {
+
+      &quot;Key\_name&quot;: &quot;value to match&quot;
+
+    }
+
+  }
+
+}
